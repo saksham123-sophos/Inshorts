@@ -1,9 +1,7 @@
 package main
 
 import (
-	"log"
 	"net/http"
-	"os"
 
 	"github.com/insights/task/database"
 	"github.com/insights/task/geocoding"
@@ -31,11 +29,11 @@ func main() {
 		}
 		return c.JSON(http.StatusOK, res)
 	})
-	port := os.Getenv("PORT")
+	// port := os.Getenv("PORT")
 
-	if port == "" {
-		log.Fatal("$PORT must be set")
-	}
-	e.Logger.Fatal(e.Start(":" + port))
-	// https://app.swaggerhub.com/apis/Saksham1/Covid_API/1.0.0-oas3#/
+	// if port == "" {
+	// 	log.Fatal("$PORT must be set")
+	// }
+	// e.Logger.Fatal(e.Start(":" + port))
+	e.Logger.Fatal(e.Start(":1122"))
 }
